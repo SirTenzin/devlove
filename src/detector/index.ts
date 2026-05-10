@@ -78,6 +78,7 @@ const WORDLIST: WordDef[] = [
   { word: "good work", severity: "moderate", group: "great work" },
   { word: "nice job", severity: "moderate", group: "great work" },
   { word: "nice work", severity: "moderate", group: "great work" },
+  { word: "nice one", severity: "moderate", group: "great work" },
   { word: "well done", severity: "strong", group: "great work" },
 
   // === PLEASE family ===
