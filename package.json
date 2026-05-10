@@ -1,65 +1,65 @@
 {
-  "name": "devlove",
-  "version": "0.0.1",
-  "description": "Count how many times you've been kind to your coding agents",
-  "type": "module",
-  "bin": {
-    "devlove": "./dist/cli.js"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/lib/index.d.ts",
-      "import": "./dist/lib/index.js"
-    }
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
-  "scripts": {
-    "start": "node dist/cli.js",
-    "build": "node build.js",
-    "dev": "node build.js --watch",
-    "typecheck": "tsc --noEmit",
-    "lint": "oxlint src/",
-    "format": "oxfmt --check src/"
-  },
-  "keywords": [
-    "cli",
-    "claude",
-    "codex",
-    "cursor",
-    "opencode",
-    "amp",
-    "cline",
-    "zed",
-    "ai",
-    "coding-agents",
-    "kindness",
-    "love"
-  ],
-  "author": "amianthus",
-  "license": "MIT",
-  "homepage": "https://github.com/SirTenzin/devlove#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SirTenzin/devlove.git"
-  },
-  "bugs": {
-    "url": "https://github.com/SirTenzin/devlove/issues"
-  },
-  "engines": {
-    "node": ">=20"
-  },
-  "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
-    "@types/node": "^25.6.1",
-    "esbuild": "^0.25.0",
-    "oxlint": "^0.16.0",
-    "typescript": "^5.8.0"
-  },
-  "dependencies": {
-    "better-sqlite3": "^11.0.0"
-  }
+	"name": "devlove",
+	"version": "0.0.2",
+	"description": "Count how many times you've been kind to your coding agents",
+	"type": "module",
+	"bin": {
+		"devlove": "./dist/cli.js"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/lib/index.d.ts",
+			"import": "./dist/lib/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"start": "node dist/cli.js",
+		"build": "node build.js",
+		"dev": "node build.js --watch",
+		"typecheck": "tsc --noEmit",
+		"lint": "oxlint src/",
+		"format": "oxfmt --check src/"
+	},
+	"keywords": [
+		"cli",
+		"claude",
+		"codex",
+		"cursor",
+		"opencode",
+		"amp",
+		"cline",
+		"zed",
+		"ai",
+		"coding-agents",
+		"kindness",
+		"love"
+	],
+	"author": "amianthus",
+	"license": "MIT",
+	"homepage": "https://github.com/SirTenzin/devlove#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SirTenzin/devlove.git"
+	},
+	"bugs": {
+		"url": "https://github.com/SirTenzin/devlove/issues"
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"devDependencies": {
+		"@types/better-sqlite3": "^7.6.13",
+		"@types/node": "^25.6.1",
+		"esbuild": "^0.25.0",
+		"oxlint": "^0.16.0",
+		"typescript": "^5.8.0"
+	},
+	"dependencies": {
+		"better-sqlite3": "^11.0.0"
+	}
 }
