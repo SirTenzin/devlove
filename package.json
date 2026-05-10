@@ -1,6 +1,6 @@
 {
 	"name": "devlove",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Count how many times you've been kind to your coding agents",
 	"type": "module",
 	"bin": {
