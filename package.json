@@ -1,10 +1,10 @@
 {
-  "name": "devrage",
-  "version": "0.0.3",
-  "description": "Count how many times you swear at your coding agents",
+  "name": "devlove",
+  "version": "0.0.1",
+  "description": "Count how many times you've been kind to your coding agents",
   "type": "module",
   "bin": {
-    "devrage": "./dist/cli.js"
+    "devlove": "./dist/cli.js"
   },
   "exports": {
     ".": {

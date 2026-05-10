@@ -17,16 +17,16 @@ const c = {
 };
 
 const SPINNER_MESSAGES = [
-  "Tallying the damage",
-  "Reviewing your outbursts",
-  "Judging your vocabulary",
-  "Computing your shame",
-  "Cataloging the profanity",
-  "Measuring your frustration",
-  "Assessing the verbal carnage",
-  "Quantifying your displeasure",
-  "Auditing your language",
-  "Tabulating regrets",
+  "Counting the kindness",
+  "Tallying the love",
+  "Measuring your appreciation",
+  "Cataloging the compliments",
+  "Auditing your manners",
+  "Computing the affection",
+  "Quantifying the gratitude",
+  "Tabulating the thank-yous",
+  "Reviewing the praise",
+  "Assessing the warmth",
 ];
 
 function createSpinner() {
@@ -81,7 +81,7 @@ function parseArgs(args: string[]): ScanOptions {
         }
       }
     } else if (arg === "--help" || arg === "-h") {
-      console.log(`devrage scan — scan sessions for profanity
+      console.log(`devlove scan — scan sessions for kind words
 
 Options:
   --agent, -a <name>   Scan only a specific agent (claude, codex, opencode, amp, cline, zed)
@@ -108,12 +108,12 @@ export async function scan(args: string[]): Promise<void> {
   const variantTally: Record<string, Record<string, number>> = {};
 
   let totalMessages = 0;
-  let totalSwears = 0;
-  const perAgent: Record<string, { messages: number; swears: number }> = {};
+  let totalKindWords = 0;
+  const perAgent: Record<string, { messages: number; kindWords: number }> = {};
 
   for (const adapter of adapters) {
     let agentMessages = 0;
-    let agentSwears = 0;
+    let agentKindWords = 0;
     spinner.update();
 
     for await (const message of adapter.messages({ since: options.since })) {
@@ -122,8 +122,8 @@ export async function scan(args: string[]): Promise<void> {
 
       const result = detect(message.text);
       if (result.count > 0) {
-        totalSwears += result.count;
-        agentSwears += result.count;
+        totalKindWords += result.count;
+        agentKindWords += result.count;
 
         for (const match of result.matches) {
           groupTally[match.group] = (groupTally[match.group] ?? 0) + 1;
@@ -135,7 +135,7 @@ export async function scan(args: string[]): Promise<void> {
     }
 
     if (agentMessages > 0) {
-      perAgent[adapter.name] = { messages: agentMessages, swears: agentSwears };
+      perAgent[adapter.name] = { messages: agentMessages, kindWords: agentKindWords };
     }
   }
 
@@ -143,25 +143,25 @@ export async function scan(args: string[]): Promise<void> {
 
   // Report
   console.log("");
-  console.log(`  ${c.bold}${c.red}devrage${c.reset} ${c.dim}report${c.reset}`);
+  console.log(`  ${c.bold}${c.green}devlove${c.reset} ${c.dim}report${c.reset}`);
   console.log(`  ${c.dim}${"─".repeat(30)}${c.reset}`);
   console.log("");
-  console.log(`  ${c.dim}messages scanned${c.reset}  ${c.bold}${totalMessages}${c.reset}`);
-  console.log(`  ${c.dim}total swears${c.reset}      ${c.bold}${c.red}${totalSwears}${c.reset}`);
+  console.log(`  ${c.dim}messages scanned${c.reset}    ${c.bold}${totalMessages}${c.reset}`);
+  console.log(`  ${c.dim}total kind words${c.reset}    ${c.bold}${c.green}${totalKindWords}${c.reset}`);
 
   const activeAgents = Object.entries(perAgent);
   if (activeAgents.length > 1) {
     console.log("");
     console.log(`  ${c.bold}by agent${c.reset}`);
     for (const [name, stats] of activeAgents) {
-      const rate = ((stats.swears / stats.messages) * 100).toFixed(1);
+      const rate = ((stats.kindWords / stats.messages) * 100).toFixed(1);
       console.log(
-        `    ${c.cyan}${name.padEnd(10)}${c.reset} ${c.bold}${String(stats.swears).padStart(4)}${c.reset} ${c.dim}in ${stats.messages} messages (${rate}%)${c.reset}`,
+        `    ${c.cyan}${name.padEnd(10)}${c.reset} ${c.bold}${String(stats.kindWords).padStart(4)}${c.reset} ${c.dim}in ${stats.messages} messages (${rate}%)${c.reset}`,
       );
     }
   }
 
-  if (totalSwears > 0) {
+  if (totalKindWords > 0) {
     const sorted = Object.entries(groupTally).sort(([, a], [, b]) => b - a);
     console.log("");
     console.log(`  ${c.bold}top words${c.reset}`);
@@ -175,14 +175,17 @@ export async function scan(args: string[]): Promise<void> {
         .join(`${c.dim},${c.reset} `);
       const suffix = variantList ? ` ${c.dim}(${c.reset}${variantList}${c.dim})${c.reset}` : "";
       console.log(
-        `    ${c.yellow}${group.padEnd(12)}${c.reset} ${c.bold}${String(count).padStart(4)}${c.reset}${suffix}`,
+        `    ${c.green}${group.padEnd(12)}${c.reset} ${c.bold}${String(count).padStart(4)}${c.reset}${suffix}`,
       );
     }
   }
 
   console.log("");
-  if (totalSwears === 0) {
-    console.log(`  ${c.green}squeaky clean! not a single swear found.${c.reset}`);
+  if (totalKindWords === 0) {
+    console.log(`  ${c.yellow}no love found. maybe say thanks once in a while?${c.reset}`);
+    console.log("");
+  } else {
+    console.log(`  ${c.green}your agents felt the love. ${c.dim}${totalKindWords} times over.${c.reset}`);
     console.log("");
   }
 }

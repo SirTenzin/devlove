@@ -5,22 +5,22 @@ const COMMANDS: Record<string, (args: string[]) => Promise<void>> = {
 };
 
 function usage(): void {
-  console.log(`devrage — count how many times you swear at your coding agents
+  console.log(`devlove — count how many times you've been kind to your coding agents
 
 Usage:
-  devrage <command> [options]
+  devlove <command> [options]
 
 Commands:
-  scan          Scan sessions for profanity
+  scan          Scan sessions for kind words
 
 Options:
   --help, -h    Show this help message
   --version     Show version
 
 Examples:
-  devrage scan
-  devrage scan --agent claude
-  devrage scan --since 2025-01-01`);
+  devlove scan
+  devlove scan --agent claude
+  devlove scan --since 2025-01-01`);
 }
 
 async function main(): Promise<void> {
@@ -33,7 +33,7 @@ async function main(): Promise<void> {
   }
 
   if (command === "--version") {
-    console.log("0.0.3");
+    console.log("0.0.1");
     process.exit(0);
   }
 
