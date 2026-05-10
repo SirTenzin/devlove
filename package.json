@@ -13,7 +13,9 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "start": "node dist/cli.js",
@@ -23,10 +25,33 @@
     "lint": "oxlint src/",
     "format": "oxfmt --check src/"
   },
+  "keywords": [
+    "cli",
+    "claude",
+    "codex",
+    "cursor",
+    "opencode",
+    "amp",
+    "cline",
+    "zed",
+    "ai",
+    "coding-agents",
+    "kindness",
+    "love"
+  ],
+  "author": "amianthus",
+  "license": "MIT",
+  "homepage": "https://github.com/SirTenzin/devlove#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirTenzin/devlove.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SirTenzin/devlove/issues"
+  },
   "engines": {
     "node": ">=20"
   },
-  "license": "MIT",
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^25.6.1",
