@@ -184,9 +184,6 @@ export async function scan(args: string[]): Promise<void> {
   if (totalKindWords === 0) {
     console.log(`  ${c.yellow}no love found. maybe say thanks once in a while?${c.reset}`);
     console.log("");
-  } else {
-    console.log(`  ${c.green}your agents felt the love. ${c.dim}${totalKindWords} times over.${c.reset}`);
-    console.log("");
   }
 }
 
