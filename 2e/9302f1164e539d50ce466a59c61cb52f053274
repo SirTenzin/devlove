@@ -1,0 +1,33 @@
+README.md
+  s_729c3646e6f78a::t_320a8dfc380cd2 1-83
+LICENSE
+  s_729c3646e6f78a::t_293c484449ca20 1-22
+package.json
+  s_729c3646e6f78a::t_59fdc36777407a 16-18,28-51
+src/detector/index.ts
+  s_729c3646e6f78a::t_dd19ccb9c5cbc1 227
+  s_729c3646e6f78a::t_8b08b4ae7dbc3e 45,55-56,82-86
+  s_729c3646e6f78a::t_8122eb39db44bc 81
+  s_729c3646e6f78a::t_5645241120889c 90-91
+  s_729c3646e6f78a::t_7c3e93cd024e63 57-80
+  s_729c3646e6f78a::t_5eda205257ecdb 140-145,149-150,152-171,173-187,193-202,204-205,207-210,212
+  s_729c3646e6f78a::t_8fd6fd261a4e6a 43,47-54,87-89,96-97,99-100
+  s_729c3646e6f78a::t_b8c14417026d22 203,206
+  s_729c3646e6f78a::t_b2a066679e7618 92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "2e9302f1164e539d50ce466a59c61cb52f053274",
+  "prompts": {},
+  "sessions": {
+    "s_729c3646e6f78a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1ee24a6f9ffe7GCmuCWmAlmhM3",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "amianthus <49116958+SirTenzin@users.noreply.github.com>"
+    }
+  }
+}
