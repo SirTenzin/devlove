@@ -4,7 +4,7 @@ Count how many times you've been kind to your coding agents.
 
 `devlove` scans your local agent session storage and tallies the nice things
 you've said — `thanks`, `please`, `great work`, `bro`, `sorry`, `love`, and
-friends. It's the friendly cousin of [`devrage`](https://github.com/gricha/devrage),
+friends. It's a fork of [`devrage`](https://github.com/gricha/devrage),
 which counts the opposite.
 
 ## Install
