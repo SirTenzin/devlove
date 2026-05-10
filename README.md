@@ -77,7 +77,3 @@ All scanning is local — nothing leaves your machine.
   detection architecture come from there.
 - Cursor adapter contributed by [@danperks](https://github.com/danperks) in
   [gricha/devrage#4](https://github.com/gricha/devrage/pull/4).
-
-## License
-
-MIT — see [LICENSE](./LICENSE).
